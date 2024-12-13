@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Flag with Input</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+    <h1>Check City</h1>
+    <label for="cityInput">Enter your city:</label>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="checkCity()">Check</button>
+
+    <script>
+        let cities = ["Karachi", "Lahore", "Islamabad", "Pindi", "Hydrabad", "Peshawar"];
+
+        function checkCity() {
+            let userCity = document.getElementById("cityInput").value.trim();
+            let isMatched = "no";
+
+            for (let i = 0; i < cities.length; i++) {
+                if (userCity.toLowerCase() === cities[i].toLowerCase()) {
+                    isMatched = "yes";
+                    break;
+                }
+            }
+
+            if (isMatched === "no") {
+                alert("City did not match");
+            } else {
+                alert("City matched");
+            }
+        }
+    </script>
+</body>
+</html>
